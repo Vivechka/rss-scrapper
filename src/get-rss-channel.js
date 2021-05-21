@@ -8,6 +8,13 @@ let config = require("../config/rss-test-config.json")
 
 let Queue = require("queue-promise")
 
+/**
+ * Make Queue for config file to run scrapper for each source object with visualisation of progress
+ *
+ * @async
+ * @function processing
+ */
+
 async function processing () {
 
     let data = []

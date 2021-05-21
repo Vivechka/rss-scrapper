@@ -5,21 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "docs":"jsdoc -c jsdoc.json",
     "start": "node ./src/get-rss-channel"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "bluebird": "^3.7.2",
     "chalk": "^4.1.0",
     "cheerio": "^1.0.0-rc.5",
     "cli-progress": "^3.9.0",
-    "exit-hook": "^2.2.1",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
-    "moment": "^2.29.1",
-    "puppeteer": "^8.0.0",
     "queue-promise": "^2.1.0"
   },
   "devDependencies": {

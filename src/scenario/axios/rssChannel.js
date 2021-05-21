@@ -3,6 +3,14 @@ let axios = require("axios")
 let cheerio = require("cheerio")
 let md5 = require("md5")
 
+/**
+ * This function get common information about source and all news from xml of site
+ *
+ * @function getChannelMetadata
+ * @param {object} data - object that contains information about source
+ * @returns {object} the updated object that inputs
+ */
+
 let getChannelMetadata = data => {
     $ = cheerio.load(data.update.xml, { xmlMode: true })
 
@@ -39,6 +47,14 @@ let getChannelMetadata = data => {
     })
 }
 
+/**
+ * This function get common information about source and all news from xml of site
+ *
+ * @function getMetadataDiff
+ * @param {object} config - object that contains previous information about source
+ * @param {object} newConfig - object that contains updated information about source
+ * @returns {object} object with array of unique massages
+ */
 
 let getMetadataDiff = (config, newConfig) => {
 
@@ -52,8 +68,16 @@ let getMetadataDiff = (config, newConfig) => {
     }
 }
 
+/**
+ * This function get common information about source and all news from xml of site
+ *
+ * @async
+ * @function getChannelInfo
+ * @param {object} config - object that contains previous information about source
+ * @returns {object} config with updated information and unique messages
+ */
 
- async function getChannelInfo(config){
+async function getChannelInfo(config){
     return axios(
             {
                 method:"GET",
